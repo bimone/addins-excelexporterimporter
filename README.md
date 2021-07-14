@@ -1,10 +1,13 @@
 # Import Export Excel
 
-> french version at the end of the page
+>version française à la fin
 
 ## Wiki
 
 In the [wiki](https://github.com/bimone/addins-excelexporterimporter/wiki) section, you will find most of the information from our documentation regarding the Import Export Excel Addin
+
+![image](https://user-images.githubusercontent.com/7872003/125590861-7183a7e7-d321-418d-b446-5244b73d9785.png)
+
 
 ## Description
 The Revit add-in Import-Export Excel 2015-2020 allows you to facilitate the management of your data in your digital models by processing it outside of Revit. First, you must export your schedule to an Excel file via the add-in, which allows you to modify your data directly in Excel (or other compatible spreadsheets). Once your information has been modified, all you have to do is import your Excel file via the add-in and your Revit schedule will automatically update with the new data. With this tool, you can ease the data management process by delegating tasks related to the information of digital models to all team members who do not have a Revit license.
