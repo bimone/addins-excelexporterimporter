@@ -1,0 +1,213 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<MaterialAssetsSettings>
+  <AssetsGroups Name="Appearance">
+    <PropertiesGroups Name="Information">
+      <Property Name="Name" DisplayName="Name" Id="UIName" Type="1" />
+      <Property Name="Description" DisplayName="Description" Id="description" Type="1" />
+      <Property Name="Keywords" DisplayName="Keywords" Id="keyword" Type="1" />
+    </PropertiesGroups>
+    <PropertiesGroups Name="Generic">
+      <Property Name="Color" DisplayName="Color" Id="generic_diffuse" Type="2" />
+      <Property Name="Image Fade" DisplayName="Image Fade" Id="generic_diffuse_image_fade" Type="3" />
+      <Property Name="Glossiness" DisplayName="Glossiness" Id="generic_glossiness" Type="3" />
+      <Property Name="" DisplayName="Is Metallic" Id="generic_is_metal" Type="1" />
+    </PropertiesGroups>
+    <PropertiesGroups Name="Reflectivity">
+      <Property Name="Direct" DisplayName="Direct" Id="generic_reflectivity_at_0deg" Type="3" />
+      <Property Name="Oblique" DisplayName="Oblique" Id="generic_reflectivity_at_90deg" Type="3" />
+    </PropertiesGroups>
+    <PropertiesGroups Name="Transparency">
+      <Property Name="Amount" DisplayName="Amount" Id="generic_bump_amount" Type="4" />
+      <Property Name="Image Fade" DisplayName="Image Fade" Id="generic_transparency_image_fade" Type="3" />
+      <Property Name="Translucency" DisplayName="Translucency" Id="generic_refraction_translucency_weight" Type="3" />
+      <Property Name="Refraction" DisplayName="Refraction" Id="generic_refraction_index" Type="4" />
+    </PropertiesGroups>
+  </AssetsGroups>
+  <AssetsGroups Name="Physical">
+    <PropertiesGroups Name="Information">
+      <Property Name="Name" DisplayName="Name" Id="Property Set Name" Type="1" />
+      <Property Name="Description" DisplayName="Description" Id="Description" Type="1" />
+      <Property Name="Keywords" DisplayName="Keywords" Id="Keywords" Type="1" />
+      <Property Name="Class" DisplayName="Type" Id="Class" Type="1" />
+      <Property Name="Subclass" DisplayName="Subclass" Id="Subclass" Type="1" />
+    </PropertiesGroups>
+    <PropertiesGroups Name="Basic Thermal">
+      <Property Name="Thermal expansion coefficient" DisplayName="Thermal expansion coefficient" Id="Thermal expansion coefficient" Type="4" />
+    </PropertiesGroups>
+    <PropertiesGroups Name="Mechanical">
+      <Property Name="Behavior" DisplayName="Behavior" Id="Behavior" Type="1" />
+    </PropertiesGroups>
+    <PropertiesGroups Name="Strength">
+      <Property Name="Yield Strength" DisplayName="Yield Strength" Id="Minimum yield stress" Type="4" />
+    </PropertiesGroups>
+  </AssetsGroups>
+  <AssetsGroups Name="Thermal">
+    <PropertiesGroups Name="Information">
+      <Property Name="Name" DisplayName="Name" Id="Property Set Name" Type="1" />
+      <Property Name="Description" DisplayName="Description" Id="Description" Type="1" />
+      <Property Name="Keywords" DisplayName="Keywords" Id="Keywords" Type="1" />
+      <Property Name="Class" DisplayName="Type" Id="Class" Type="1" />
+      <Property Name="Subclass" DisplayName="Subclass" Id="Subclass" Type="1" />
+      <Property Name="Source" DisplayName="Source" Id="Source" Type="1" />
+      <Property Name="Source URL" DisplayName="Source URL" Id="Source URL" Type="1" />
+    </PropertiesGroups>
+    
+    <PropertiesGroups Name="Basic Thermal">
+      <Property Name="Behavior" DisplayName="Behavior" Id="Behavior" Type="4" />
+      <Property Name="Thermal Conductivity" DisplayName="Thermal Conductivity" Id="Thermal Conductivity" Type="4" />
+      <Property Name="Specific Heat" DisplayName="Specific Heat" Id="Specific Heat" Type="4" />
+      <Property Name="Density" DisplayName="Density" Id="Density" Type="4" />
+      <Property Name="Emissivity" DisplayName="Emissivity" Id="Emissivity" Type="4" />
+      <Property Name="Gas Viscosity" DisplayName="Gas Viscosity" Id="Gas Viscosity" Type="4" />
+      <Property Name="Compressibility" DisplayName="Compressibility" Id="Compressibility" Type="4" />
+    </PropertiesGroups>
+  </AssetsGroups>
+</MaterialAssetsSettings>
+
+<!--
+Types :
+  1= string
+  2= color
+  3= decimal * 100
+  4= decimal 
+  
+  
+  <Property Name="<Name of the property - should be unique>" DisplayName="<Header text that will be appears on 
+
+excel sheet>" Id="<Property/Parameter name as below>" Type="<Value type as above>" />
+
+***************  Appearance properties ***********
+ShadingModel = Unknown
+MultiLayer = False
+description = Generic material.
+version = 2
+revision = 1
+BaseSchema = GenericSchema
+AssetLibID = AD121259-C03E-4A1D-92D8-59A22B4807AD
+VersionGUID = Generic-027
+assettype = materialappearance
+common_Tint_toggle = False
+common_Tint_color = 0.315,0.315,0.315,1,
+SchemaVersion = 1
+localtype = Appearance
+localname = Generic
+UIName = Clear = Light
+thumbnail = Mats\Generic\Presets\t_Generic-027.png
+Hidden = False
+UIDefinition = Mats\Generic\GenericUI.xml
+AdvancedUIDefinition = Mats\Generic\GenericAdvancedUI.xml
+ImplementationMentalRay = Mats\Generic\MentalImage.xml
+ImplementationOGS = Mats\Generic\OGS.xml
+ImplementationPreview = Mats\Generic\PreviewColor.xml
+ImplementationGeneric = 
+swatch = Swatch-Vase
+common_Shared_Asset = 1
+color_by_object = False
+generic_diffuse = 0.9,0.9,0.9,1,
+generic_diffuse_image_fade = 0
+generic_reflectivity_at_0deg = 0
+generic_reflectivity_at_90deg = 0.2
+generic_glossiness = 0.5
+generic_is_metal = False
+generic_transparency = 1
+generic_transparency_image_fade = 0
+generic_refraction_index = 1.52
+generic_refraction_translucency_weight = 0
+generic_cutout_opacity = 1
+generic_backface_cull = False
+generic_self_illum_luminance = 0
+generic_self_illum_color_temperature = 6500
+generic_self_illum_filter_map = 1,1,1,1,
+generic_bump_amount = 0.2
+generic_bump_map = 0,0,0,1,
+generic_ao_on = False
+generic_ao_samples = 16
+generic_ao_distance = 4
+generic_ao_details = True
+generic_roundcorners_radius = 0
+generic_roundcorners_allow_different_materials = False
+generic_refl_depth = 2
+generic_refr_depth = -1
+generic_reflection_glossy_samples = 8
+generic_refraction_glossy_samples = 8
+mode = 4
+keyword = :special:light:glass:clear:off:materials:generic
+PatternOffset = 0,0,
+*************************************************************
+
+****************** Physical Parameters **********************
+Design Option = 
+Grade = Standard
+Shear strength modification = 1
+Property Set Name = Air
+Asset library id = AD121259-C03E-4A1D-92D8-59A22B4807AD
+Category = 
+Resistance calculation strength = 344.737864658418
+Description = Air, properties at atmospheric pressure
+Specific Heat = 1.0035
+Type Name = 
+Keywords = structural:gas
+Shear parallel to grain = 0.0089
+Thermal Conductivity = 0.025
+Poisson ratio Z = 0.3
+Shear modulus Z = 76904.1228479999
+Poisson ratio Y = 0.3
+Behavior = 0
+Young modulus X = 199947.961501882
+External Material ID = 
+Thermal expansion coefficient X = 1.08E-05
+Shear modulus Y = 76904.1228479999
+Species = Douglas Fir (West)
+Damping ratio = 0.06
+Shear reinforcement yield stress = 413.685437590102
+Tension perpendicular to grain = 0.0024
+Minimum yield stress = 344.737864658418
+Unit weight = 0.01176793632
+Lightweight = False
+Young modulus Y = 199947.961501882
+Compression parallel to grain = 51.2
+Subclass = 
+Family Name = 
+Density = 1.2
+Shear modulus X = 76904.1228479999
+Bending = 87
+Thermal expansion coefficient = 0.1
+Poisson ratio X = 0.3
+Sharing = 1
+Thermal expansion coefficient Y = 1.08E-05
+Concrete compression = 27.5790291726734
+Minimum tensile strength = 448.159224055943
+Class = 7
+Young modulus Z = 199947.961501882
+Compression perpendicular to grain = 5.2
+Category = 
+Thermal expansion coefficient Z = 1.08E-05
+Bending reinforcement = 413.685437590102
+Reduction factor for shear = 1.66
+************************************************************
+
+****************** Thermal Parameters **********************
+Specific Heat = 1.0035
+Compressibility = 0.9992
+Source URL = 
+Category = 
+Asset library id = AD121259-C03E-4A1D-92D8-59A22B4807AD
+Family Name = 
+Category = 
+Subclass = 
+Thermal Conductivity = 0.025
+Density = 1.2
+Design Option = 
+Sharing = 1
+Source = Autodesk
+Type Name = 
+Property Set Name = Air
+Emissivity = 0.001
+Keywords = thermal:gas
+Class = 1
+Description = Air, properties at atmospheric pressure
+Gas Viscosity = 0.0001
+Behavior
+************************************************************
+-->

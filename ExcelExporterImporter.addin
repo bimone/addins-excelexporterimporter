@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>BIM One Inc. - ExcelExporterImporter</Name>
+    <Assembly>.\ExcelExporterImporter\ExcelExporterImporter.dll</Assembly>
+    <AddInId>AD298DDE-505F-4EA8-BA81-C4C1933165A6</AddInId>
+    <FullClassName>ExcelExporterImporter.Button</FullClassName>
+    <VendorId>BIMO</VendorId>
+    <VendorDescription>BIM One - www.bimone.com</VendorDescription>
+  </AddIn>
+</RevitAddIns>

@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ParametersSettings>
+  <!--Parameters in ParametersTranslations sections allows you to define text to be exported instead of enumeration values-->
+  <ParametersTranslations>
+    <ParameterTranslation Name="Discipline" Location="View Listing">
+      <Translations Text="Architectural" Value="1" />
+      <Translations Text="Structural" Value="2" />
+      <Translations Text="Mechanical" Value="4" />
+      <Translations Text="Electrical" Value="8" />
+      <Translations Text="Plumbing" Value="16" />
+      <Translations Text="Coordination" Value="4095" />
+    </ParameterTranslation>
+
+    <ParameterTranslation Name="Depth Clipping" Location="View Listing">
+      <Translations Text="No Clip" Value="0" />
+      <Translations Text="Clip with line" Value="1" />
+      <Translations Text="Clip without Line" Value="2" />
+    </ParameterTranslation>
+
+    <ParameterTranslation Name="Detail Level" Location="View Listing">
+      <Translations Text="Coarse" Value="1" />
+      <Translations Text="Medium" Value="2" />
+      <Translations Text="Fine" Value="3" />
+    </ParameterTranslation>
+
+    <ParameterTranslation Name="Color Scheme Location" Location="View Listing">
+      <Translations Text="Foreground" Value="0" />
+      <Translations Text="Background" Value="1" />
+    </ParameterTranslation>
+
+    <ParameterTranslation Name="Underlay Orientation" Location="View Listing">
+      <Translations Text="Plan" Value="0" />
+      <Translations Text="Reflected Ceiling Plan" Value="1" />
+    </ParameterTranslation>
+
+    <ParameterTranslation Name="Wall Join Display" Location="View Listing">
+      <Translations Text="Clean all joins" Value="0" />
+      <Translations Text="Clean same type wall joins" Value="1" />
+    </ParameterTranslation>
+
+    <ParameterTranslation Name="Orientation" Location="View Listing">
+      <Translations Text="Up" Value="0" />
+      <Translations Text="Down" Value="1" />
+      <Translations Text="By Scope Box" Value="3" />
+
+
+    </ParameterTranslation>
+
+    <ParameterTranslation Name="Parts Visibility" Location="View Listing">
+      <Translations Text="Show Parts" Value="0" />
+      <Translations Text="Show Original" Value="1" />
+      <Translations Text="Show Both" Value="2" />
+    </ParameterTranslation>
+
+    <ParameterTranslation Name="Physical_Class" Location="Used Materials">
+      <Translations Text="Undefined" Value="0" />
+      <Translations Text="Basic" Value="1" />
+      <Translations Text="Generic" Value="2" />
+      <Translations Text="Metal" Value="3" />
+      <Translations Text="Concrete" Value="4" />
+      <Translations Text="Wood" Value="5" />
+      <Translations Text="Liquid" Value="6" />
+      <Translations Text="Gas" Value="7" />
+      <Translations Text="Plastic" Value="8" />
+    </ParameterTranslation>
+    <ParameterTranslation Name="Thermal_Class" Location="Used Materials">
+      <Translations Text="Undefined" Value="0" />
+      <Translations Text="Basic" Value="1" />
+      <Translations Text="Generic" Value="2" />
+      <Translations Text="Metal" Value="3" />
+      <Translations Text="Concrete" Value="4" />
+      <Translations Text="Wood" Value="5" />
+      <Translations Text="Liquid" Value="6" />
+      <Translations Text="Gas" Value="7" />
+      <Translations Text="Plastic" Value="8" />
+    </ParameterTranslation>
+    <ParameterTranslation Name="Thermal_Behavior" Location="Used Materials">
+      <Translations Text="Isotropic" Value="0" />
+      <Translations Text="Orthotropic" Value="1" />
+    </ParameterTranslation>
+    <ParameterTranslation Name="Physical_Behavior" Location="Used Materials">
+      <Translations Text="Isotropic" Value="0" />
+      <Translations Text="Orthotropic" Value="1" />
+      <Translations Text="Transverse Isotropic" Value="2" />
+    </ParameterTranslation>
+    <ParameterTranslation Name="Structural Usage" Location="*">
+      <Translations Text="Girder" Value="3" />
+      <Translations Text="Joist" Value="4" />
+      <Translations Text="Purlin" Value="5" />
+      <Translations Text="Other" Value="6" />
+      <Translations Text="Vertical Bracing" Value="7" />
+      <Translations Text="Horizontal Bracing" Value="8" />
+      <Translations Text="Kicker Bracing" Value="9" />
+      <Translations Text="Chord" Value="11" />
+      <Translations Text="Web" Value="12" />
+    </ParameterTranslation>
+  </ParametersTranslations>
+
+  <!--Parameters within a IgnoredParameters section will not be exported -->
+  <IgnoredParameters Location="View Listing">
+    <Parameter Name="Visibility/Graphics Overrides" />
+    <Parameter Name="Color Scheme" />
+    <Parameter Name="Graphic Display Options" />
+    <Parameter Name="System Color Schemes" />
+    <Parameter Name="View Range" />
+    <Parameter Name="Default Analysis Display Style" />
+  </IgnoredParameters>
+  <IgnoredParameters Location="Sheet Listing">
+    <Parameter Name="Visibility/Graphics Overrides" />
+    <Parameter Name="Type id" />
+    <Parameter Name="Dependency" />
+  </IgnoredParameters>
+  <IgnoredParameters Location="*">
+    <!--<Parameter Name="Category" />-->
+    <!--<Parameter Name="Family and Type" />-->
+    <!--<Parameter Name="Family" />-->
+    <Parameter Name="Design Option" />
+    <Parameter Name="Image" />
+    <Parameter Name="Behavior" />
+  </IgnoredParameters>
+
+  <!--ReadonlyParameters are exported, but ignored on import. -->
+  <ReadonlyParameter Name="Type" Id="-1002050"/>
+  <ReadonlyParameter Name="Family" Id="-1002051"/>
+  <ReadonlyParameter Name="Family And Type" Id="-1002052"/>
+  <ReadonlyParameter Name="Level" Id="-1002062"/>
+
+
+</ParametersSettings>
+
+<!--
+  Locations values:
+    *
+    Sheet Listing
+    View Listing
+    Project Information
+    Used Materials
+    ViewSchedule_[Schedule name]
+-->

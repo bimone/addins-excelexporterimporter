@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?> 
+<RevitAddIns>
+  <AddIn Type="Application">
+    <Name>Excel Exporter-Importer</Name>
+    <Assembly>ExcelExporterImporter\ExcelExporterImporter.dll</Assembly>    
+    <AddInId>5C4B1590-780E-4732-A080-732AE5AF249F</AddInId>
+    <FullClassName>ExcelExporterImporter.Button</FullClassName>
+    <VendorId>BIMO</VendorId>
+    <VendorDescription>Synchronize data back and forth between Revit and Excel.</VendorDescription>
+  </AddIn>
+</RevitAddIns>

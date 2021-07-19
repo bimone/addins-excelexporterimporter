@@ -1,0 +1,558 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="WarningRevitFileNotSaved" xml:space="preserve">
+    <value>Le document actuel contient des modifications non enregistrées. Sauvegardez le fichier actuel et réessayez.</value>
+  </data>
+  <data name="WarningRevitFileNotSavedTitle" xml:space="preserve">
+    <value>Fichier non enregistré</value>
+  </data>
+  <data name="FileInUseTitle" xml:space="preserve">
+    <value>Fichier en cours d'utilisation</value>
+  </data>
+  <data name="FileInUseMessage" xml:space="preserve">
+    <value>L'action ne peut pas être terminée, car le fichier est ouvert dans un autre programme. Fermez le fichier et réessayez.</value>
+  </data>
+  <data name="SelectTargetFolderTitle" xml:space="preserve">
+    <value>Le dossier cible est vide</value>
+  </data>
+  <data name="SelectTargetFolderMessage" xml:space="preserve">
+    <value>Veuillez sélectionner un dossier de destination.</value>
+  </data>
+  <data name="NothingToExportMessage" xml:space="preserve">
+    <value>Veuillez sélectionner les programmes ou les normes à exporter.</value>
+  </data>
+  <data name="NothingToExportTitle" xml:space="preserve">
+    <value>Sélection vide</value>
+  </data>
+  <data name="ExportProcessCompleteMessage" xml:space="preserve">
+    <value>Le processus d'exportation s'est terminé avec succès.</value>
+  </data>
+  <data name="ProcessCompleteTitle" xml:space="preserve">
+    <value>Opération terminée</value>
+  </data>
+  <data name="ExportErrorMessage" xml:space="preserve">
+    <value>Une erreur s'est produite lors de l'exportation des données: {0}</value>
+  </data>
+  <data name="Error" xml:space="preserve">
+    <value>Erreur</value>
+  </data>
+  <data name="ConfirmOverwriteFile" xml:space="preserve">
+    <value>Confirmer l'enregistrement</value>
+  </data>
+  <data name="ConfirmSaveMessage" xml:space="preserve">
+    <value>{0} existe déjà. Voulez-vous le remplacer ?</value>
+  </data>
+  <data name="ExportProgressExporting" xml:space="preserve">
+    <value>Exportation "{0}"</value>
+  </data>
+  <data name="ImportNoSelection" xml:space="preserve">
+    <value>Veuillez sélectionner les feuilles de calcul à importer.</value>
+  </data>
+  <data name="ImportNoSelectionTitle" xml:space="preserve">
+    <value>No Selection</value>
+  </data>
+  <data name="ImportNoFileSelectedTitle" xml:space="preserve">
+    <value>Aucun fichier sélectionné</value>
+  </data>
+  <data name="ImportNoFileSelected" xml:space="preserve">
+    <value>Sélectionnez un fichier pour importer les données.</value>
+  </data>
+  <data name="ProgressImportingExcelData" xml:space="preserve">
+    <value>Importer des données Excel ...</value>
+  </data>
+  <data name="ImportErrorMessage" xml:space="preserve">
+    <value>Une erreur s'est produite lors de l'importation des données: {0}</value>
+  </data>
+  <data name="ImportProcessCompleteMessage" xml:space="preserve">
+    <value>Le processus d'importation s'est terminé avec succès.</value>
+  </data>
+  <data name="ImportUnavailable" xml:space="preserve">
+    <value>Importation non disponible</value>
+  </data>
+  <data name="ImportUnavailableMsg" xml:space="preserve">
+    <value>Il n'y a aucune donnée qui peut être importée.</value>
+  </data>
+  <data name="InvalidExcelFile" xml:space="preserve">
+    <value>Fichier Excel non valide</value>
+  </data>
+  <data name="InvalidExcelFileMessage" xml:space="preserve">
+    <value>Vous devez utiliser un fichier Excel qui a été exporté par ce composant. Consultez l'aide pour en savoir plus.</value>
+  </data>
+  <data name="DoYouNeedHelp" xml:space="preserve">
+    <value>Avez-vous besoin d'aide? Souhaitez-vous signaler un problème ?</value>
+  </data>
+  <data name="OpenATicket" xml:space="preserve">
+    <value> Ouvrir un billet</value>
+  </data>
+  <data name="Schedule" xml:space="preserve">
+    <value>Nomenclatures</value>
+  </data>
+  <data name="Browse" xml:space="preserve">
+    <value>Parcourir...</value>
+  </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Annuler</value>
+  </data>
+  <data name="CannotConvertParameterType" xml:space="preserve">
+    <value>Impossible de convertir le type de paramètre</value>
+  </data>
+  <data name="CheckAll" xml:space="preserve">
+    <value>Tout cocher</value>
+  </data>
+  <data name="CheckNone" xml:space="preserve">
+    <value>Rien cocher</value>
+  </data>
+  <data name="ErrorOccurredWhileSettingParameter" xml:space="preserve">
+    <value>Une erreur s'est produite lors de la définition du paramètre {0}: {1}</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>EXPORTER</value>
+  </data>
+  <data name="ExportOptions" xml:space="preserve">
+    <value>Options d'exportation</value>
+  </data>
+  <data name="File" xml:space="preserve">
+    <value>Fichier :</value>
+  </data>
+  <data name="Import" xml:space="preserve">
+    <value>IMPORTER</value>
+  </data>
+  <data name="ImportElementFormExcelFile" xml:space="preserve">
+    <value>Importer des éléments depuis un fichier Excel</value>
+  </data>
+  <data name="ImportingElement" xml:space="preserve">
+    <value>Élément importé : {0} ({1})</value>
+  </data>
+  <data name="OneFileOneTabPerSchedule" xml:space="preserve">
+    <value>Un fichier, un onglet par nomenclature</value>
+  </data>
+  <data name="OneFilePerSchedule" xml:space="preserve">
+    <value>Un fichier par nomenclature</value>
+  </data>
+  <data name="OutputFolder" xml:space="preserve">
+    <value>Répertoire de sortie :</value>
+  </data>
+  <data name="Prefix" xml:space="preserve">
+    <value>Préfixe :</value>
+  </data>
+  <data name="Standards" xml:space="preserve">
+    <value>Standards</value>
+  </data>
+  <data name="ToAUnitType" xml:space="preserve">
+    <value>à un type d'unité.</value>
+  </data>
+  <data name="UnableFindCorrespondingValue" xml:space="preserve">
+    <value>Impossible de trouver une valeur correspondante pour le texte spécifié ({0}).</value>
+  </data>
+  <data name="CancelTheExportProcess" xml:space="preserve">
+    <value>Annuler le processus d'exportation</value>
+  </data>
+  <data name="CouldNotDeleteFile" xml:space="preserve">
+    <value>Impossible de supprimer le fichier {0}, le processus ne peut pas continuer. Si le fichier est présentement ouvert, vous devez le fermer pour poursuivre.</value>
+  </data>
+  <data name="OverwriteTargetFiles" xml:space="preserve">
+    <value>Écraser les fichiers cibles</value>
+  </data>
+  <data name="OverwriteTheExistingFiles" xml:space="preserve">
+    <value>Écraser les fichiers existants</value>
+  </data>
+  <data name="TargetFileAlreadyExists" xml:space="preserve">
+    <value>Le ou les fichiers cibles existent déjà</value>
+  </data>
+  <data name="TheFileAlreadyExists" xml:space="preserve">
+    <value>Le fichier {0} existe déjà.</value>
+  </data>
+  <data name="TheTargetFolderAlreadyContainsFiles" xml:space="preserve">
+    <value>Le répertoire cible contient déjà {0} fichiers avec des noms en conflit</value>
+  </data>
+  <data name="CompletedWithErrors" xml:space="preserve">
+    <value>Terminé avec des erreurs</value>
+  </data>
+  <data name="Exporting" xml:space="preserve">
+    <value>Exportation de {0}</value>
+  </data>
+  <data name="IsNotKnownStandardGuid" xml:space="preserve">
+    <value>n'est pas un guide standard connu.</value>
+  </data>
+  <data name="Schedule2" xml:space="preserve">
+    <value>Nomenclature {0} : {1}</value>
+  </data>
+  <data name="SomeElementsCouldNotBeImported" xml:space="preserve">
+    <value>Certains éléments n'ont pas pu être importés.</value>
+  </data>
+  <data name="Standard" xml:space="preserve">
+    <value>Standard {0} : {1}</value>
+  </data>
+  <data name="TheImportProcessWasCompletedWithErrors" xml:space="preserve">
+    <value>Le processus d'importation s'est terminé avec des erreurs.</value>
+  </data>
+  <data name="ThisSheetCanNotBeImported" xml:space="preserve">
+    <value>Cette feuille ne peut être importée.</value>
+  </data>
+  <data name="ViewDetails" xml:space="preserve">
+    <value>Voir les détails</value>
+  </data>
+  <data name="AnalyticalModelObjects" xml:space="preserve">
+    <value>Objets du modèle analytique</value>
+  </data>
+  <data name="AnnotationObjects" xml:space="preserve">
+    <value>Objets d'annotation</value>
+  </data>
+  <data name="Appearance" xml:space="preserve">
+    <value>Apparence</value>
+  </data>
+  <data name="Categories" xml:space="preserve">
+    <value>Catégories</value>
+  </data>
+  <data name="Category" xml:space="preserve">
+    <value>Catégorie</value>
+  </data>
+  <data name="CutPattern" xml:space="preserve">
+    <value>Motif de coupe</value>
+  </data>
+  <data name="CutPatternColorRGB" xml:space="preserve">
+    <value>Couleur du motif de coupe (R-G-B)</value>
+  </data>
+  <data name="FamilyListing" xml:space="preserve">
+    <value>Liste des familles</value>
+  </data>
+  <data name="Graphics" xml:space="preserve">
+    <value>Graphique</value>
+  </data>
+  <data name="Group" xml:space="preserve">
+    <value>Groupe</value>
+  </data>
+  <data name="GUID" xml:space="preserve">
+    <value>GUID</value>
+  </data>
+  <data name="ID" xml:space="preserve">
+    <value>ID</value>
+  </data>
+  <data name="InstanceBinding" xml:space="preserve">
+    <value>Liaison d'instance</value>
+  </data>
+  <data name="IsShared" xml:space="preserve">
+    <value>Est partagé</value>
+  </data>
+  <data name="LineColorRGB" xml:space="preserve">
+    <value>Couleur de la ligne (R,G,B)</value>
+  </data>
+  <data name="LineStyles" xml:space="preserve">
+    <value>Styles de ligne</value>
+  </data>
+  <data name="LineWeightCut" xml:space="preserve">
+    <value>Épaisseur de la  ligne - Coupe</value>
+  </data>
+  <data name="LineWeightProjection" xml:space="preserve">
+    <value>Épaisseur de la ligne - Projection</value>
+  </data>
+  <data name="Materials" xml:space="preserve">
+    <value>Matériaux</value>
+  </data>
+  <data name="MaterialsAllUsed" xml:space="preserve">
+    <value>Matériaux (Tous utilisés)</value>
+  </data>
+  <data name="ModelObjects" xml:space="preserve">
+    <value>Objets de modèle</value>
+  </data>
+  <data name="Name" xml:space="preserve">
+    <value>Nom</value>
+  </data>
+  <data name="ObjectStyles" xml:space="preserve">
+    <value>Styles d'objets</value>
+  </data>
+  <data name="OwnerGroupName" xml:space="preserve">
+    <value>Nom du groupe propriétaires</value>
+  </data>
+  <data name="ProjectInformation" xml:space="preserve">
+    <value>Informations sur le projet</value>
+  </data>
+  <data name="ProjectParameters" xml:space="preserve">
+    <value>Paramètres du projet</value>
+  </data>
+  <data name="ProjectParametersSettings" xml:space="preserve">
+    <value>Paramètres du projet</value>
+  </data>
+  <data name="Properties" xml:space="preserve">
+    <value>Propriétés</value>
+  </data>
+  <data name="ShadingColorRGB" xml:space="preserve">
+    <value>Couleur d'ombrage (R-G-B)</value>
+  </data>
+  <data name="SharedParametersSettings" xml:space="preserve">
+    <value>Paramètres partagés</value>
+  </data>
+  <data name="SharedProjectParameters" xml:space="preserve">
+    <value>Paramètres de projet partagés</value>
+  </data>
+  <data name="SheetListing" xml:space="preserve">
+    <value>Liste des feuilles</value>
+  </data>
+  <data name="SheetListingAll" xml:space="preserve">
+    <value>Liste des feuilles (Toutes)</value>
+  </data>
+  <data name="SheetName" xml:space="preserve">
+    <value>Nom de la feuille</value>
+  </data>
+  <data name="SheetNumber" xml:space="preserve">
+    <value>Numéro de feuille</value>
+  </data>
+  <data name="SurfacePattern" xml:space="preserve">
+    <value>Motif de surface</value>
+  </data>
+  <data name="SurfacePatternAlignment" xml:space="preserve">
+    <value>Alignement du motif de surface</value>
+  </data>
+  <data name="SurfacePatternColorRGB" xml:space="preserve">
+    <value>Couleur du motif de surface (R-G-B)</value>
+  </data>
+  <data name="Type" xml:space="preserve">
+    <value>Type</value>
+  </data>
+  <data name="UseRenderAppearanceForShading" xml:space="preserve">
+    <value>Utiliser l'apparence de rendu pour l'ombrage</value>
+  </data>
+  <data name="Value" xml:space="preserve">
+    <value>Valeur</value>
+  </data>
+  <data name="ViewListing" xml:space="preserve">
+    <value>Liste des vues</value>
+  </data>
+  <data name="ViewListingAll" xml:space="preserve">
+    <value>Liste des vues (Toutes)</value>
+  </data>
+  <data name="ViewName" xml:space="preserve">
+    <value>Nom de la vue</value>
+  </data>
+  <data name="Visible" xml:space="preserve">
+    <value>Visible</value>
+  </data>
+  <data name="Description" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="UserModifiable" xml:space="preserve">
+    <value>Modifiable par l'utilisateur</value>
+  </data>
+  <data name="TabExportAdvanced" xml:space="preserve">
+    <value>Exporter (Avancé)</value>
+  </data>
+  <data name="TabExportBasic" xml:space="preserve">
+    <value>Exporter (Base)</value>
+  </data>
+  <data name="CannotConnectToServeur" xml:space="preserve">
+    <value>Connexion au serveur impossible</value>
+  </data>
+  <data name="ClickHereForMoreInformation" xml:space="preserve">
+    <value>Cliquez ici pour plus d'information</value>
+  </data>
+  <data name="NoNewVersionAvailable" xml:space="preserve">
+    <value>Version à jour</value>
+  </data>
+  <data name="WarningFormula" xml:space="preserve">
+    <value>Avertissement : Les valeurs des colonnes de type formule ne sont pas exportées dans le mode avancé. Vous pouvez utiliser le mode de base pour exporter les résultats de la formule.</value>
+  </data>
+  <data name="clColTitleColor" xml:space="preserve">
+    <value>Couleur</value>
+  </data>
+  <data name="clColTitleDescription" xml:space="preserve">
+    <value>Description</value>
+  </data>
+  <data name="clDescChangingValueParameterAllowed" xml:space="preserve">
+    <value>Modification de la valeur du paramètre est autorisé</value>
+  </data>
+  <data name="clDescColumnTitle" xml:space="preserve">
+    <value>Titre de la colonne</value>
+  </data>
+  <data name="clDescParameterValueLocked" xml:space="preserve">
+    <value>Valeur du paramètre verrouillé et qui ne peut être modifié pour l'importation</value>
+  </data>
+  <data name="clDescSubTotalLevel1" xml:space="preserve">
+    <value>Sous total niveau 1</value>
+  </data>
+  <data name="clDescSubTotalLevel2" xml:space="preserve">
+    <value>Sous total niveau 2 et plus</value>
+  </data>
+  <data name="clDescTotal" xml:space="preserve">
+    <value>Total</value>
+  </data>
+  <data name="clDescValueLockedElementType" xml:space="preserve">
+    <value>Valeur d'un paramètre de type d'élément verrouillé</value>
+  </data>
+  <data name="clDescValueParameterNotExported" xml:space="preserve">
+    <value>Valeur d'un paramètre qui ne peut être exporté</value>
+  </data>
+  <data name="clDescValueType" xml:space="preserve">
+    <value>Type de valeur</value>
+  </data>
+  <data name="clLegend" xml:space="preserve">
+    <value>Légende</value>
+  </data>
+  <data name="clLegendTitle" xml:space="preserve">
+    <value>Légende des couleurs</value>
+  </data>
+  <data name="Notice" xml:space="preserve">
+    <value>Notice</value>
+  </data>
+  <data name="NoticeExportAvanced" xml:space="preserve">
+    <value>Bidirectionnel - L'import possible, mais la mise en forme est modifiée.</value>
+  </data>
+  <data name="NoticeExportBasic" xml:space="preserve">
+    <value>Unidirectionnel - Conserve la mise en forme, mais l'import est impossible.</value>
+  </data>
+  <data name="NoticeImport" xml:space="preserve">
+    <value>Permets l'import de données via une nomenclature exportée en mode bidirectionnel.</value>
+  </data>
+  <data name="ExportMode" xml:space="preserve">
+    <value>Mode d'export</value>
+  </data>
+  <data name="Exit" xml:space="preserve">
+    <value>Quitter</value>
+  </data>
+  <data name="Help" xml:space="preserve">
+    <value>Aide</value>
+  </data>
+  <data name="Support" xml:space="preserve">
+    <value>Support</value>
+  </data>
+  <data name="UnableToDeleteFile" xml:space="preserve">
+    <value>Impossible de supprimer le fichier</value>
+  </data>
+  <data name="AvailableImport" xml:space="preserve">
+    <value>Compatible pour l'import</value>
+  </data>
+  <data name="NotAvailableForImport" xml:space="preserve">
+    <value>Non compatible pour l'import</value>
+  </data>
+  <data name="TitleBtnExport" xml:space="preserve">
+    <value>Exporter</value>
+  </data>
+  <data name="TitleBtnImport" xml:space="preserve">
+    <value>Importer</value>
+  </data>
+  <data name="AreYouSureYouWantCancelProcess" xml:space="preserve">
+    <value>Voulez-vous vraiment annuler ce processus ?</value>
+  </data>
+  <data name="Attention" xml:space="preserve">
+    <value>Attention!</value>
+  </data>
+  <data name="Cancelling" xml:space="preserve">
+    <value>Annulation...</value>
+  </data>
+</root>
