@@ -1,6 +1,6 @@
 # Import Export Excel
 
->version française à la fin
+> [Aller à la version française (à la fin)](#description-version-française)
 
 ## Wiki
 
@@ -10,13 +10,13 @@ In the [wiki](https://github.com/bimone/addins-excelexporterimporter/wiki) secti
 
 
 ## Description
-The Revit add-in Import-Export Excel 2015-2020 allows you to facilitate the management of your data in your digital models by processing it outside of Revit. First, you must export your schedule to an Excel file via the add-in, which allows you to modify your data directly in Excel (or other compatible spreadsheets). Once your information has been modified, all you have to do is import your Excel file via the add-in and your Revit schedule will automatically update with the new data. With this tool, you can ease the data management process by delegating tasks related to the information of digital models to all team members who do not have a Revit license.
+The Revit add-in Import-Export Excel 2015-2021 allows you to facilitate the management of your data in your digital models by processing it outside of Revit. First, you must export your schedule to an Excel file via the add-in, which allows you to modify your data directly in Excel (or other compatible spreadsheets). Once your information has been modified, all you have to do is import your Excel file via the add-in and your Revit schedule will automatically update with the new data. With this tool, you can ease the data management process by delegating tasks related to the information of digital models to all team members who do not have a Revit license.
 
 As of version 20.1.0.0, a new feature has been added allowing you to export to an Excel file while respecting the layout of the schedule, for viewing purposes only.
 
 ## Addin limitations
 
-### Read-only :
+### Read-only:
 Some Revit parameters are considered "read-only" when their value is controlled by Revit. You will not be able to modify this type of parameter even if you modify it in the Excel file because you are not authorized to write in these parameters. Read-only parameters are colored gray and locked when exported to Excel so that you can distinguish them from others.
 
 ### Import constraints:
@@ -26,8 +26,8 @@ Once the file has been exported, you can only modify the existing data in the fi
 
 ---
 
-## Description
-L’outil complémentaire de Revit (Export-Import Excel 2015-2020) vous permet de faciliter la gestion de vos données dans vos maquettes numériques en la traitant à l’extérieur de Revit. Dans un premier temps, vous devez exporter votre nomenclature vers un fichier Excel via l’outil complémentaire, ce qui vous permet de modifier vos données directement dans Excel (ou autre tableur compatible). Une fois vos informations modifiées, il vous suffit d’importer votre fichier Excel via l’outil complémentaire et votre nomenclature se mettra automatiquement à jour avec les nouvelles données. Avec cet outil, vous pouvez donc soulager le processus de gestion des données en déléguant des tâches liées à l’information des maquettes numériques à tous les membres de l'équipe n’ayant pas de licence d’utilisation du logiciel Revit ou ayant des connaissances limitées du logiciel.
+## Description (version française)
+L’outil complémentaire de Revit (Export-Import Excel 2015-2021) vous permet de faciliter la gestion de vos données dans vos maquettes numériques en la traitant à l’extérieur de Revit. Dans un premier temps, vous devez exporter votre nomenclature vers un fichier Excel via l’outil complémentaire, ce qui vous permet de modifier vos données directement dans Excel (ou autre tableur compatible). Une fois vos informations modifiées, il vous suffit d’importer votre fichier Excel via l’outil complémentaire et votre nomenclature se mettra automatiquement à jour avec les nouvelles données. Avec cet outil, vous pouvez donc soulager le processus de gestion des données en déléguant des tâches liées à l’information des maquettes numériques à tous les membres de l'équipe n’ayant pas de licence d’utilisation du logiciel Revit ou ayant des connaissances limitées du logiciel.
 
 À partir de la version 20.1.0.0, une nouvelle fonctionnalité a été ajoutée vous permettant d’exporter vers un fichier Excel en respectant au mieux la mise en forme de la nomenclature, dans un but de visualisation seulement.
 
@@ -37,7 +37,7 @@ L’outil complémentaire de Revit (Export-Import Excel 2015-2020) vous permet d
 
 Certains paramètres de Revit sont considérés comme «en lecture seule» lorsque leur valeur est contrôlée par le moteur de Revit. Vous ne pourrez pas modifier ce type de paramètres même si vous le modifiez dans le fichier Excel car vous n'êtes pas autorisé à écrire dans ces paramètres. Les paramètres en lecture seule sont colorés en gris et verrouillés lors de l'exportation vers Excel afin que vous puissiez les distinguer des autres.
 
-### Contraintes d'importation:
+### Contraintes d'importation :
 
 L’importation fonctionne uniquement avec les fichiers qui ont été exportés en mode bidirectionnel à l’aide de ce complément.Les nomenclatures ne sont donc pas toutes importables.
 
