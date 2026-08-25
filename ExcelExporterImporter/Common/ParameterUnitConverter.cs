@@ -15,8 +15,8 @@ namespace ExcelExporterImporter.Common
             var imperialValue = param.AsDouble();
             var document = param.Element.Document;
             double dResult = 0;
-#if REVIT2021
-                var fo = document.GetUnits().GetFormatOptions(param.Definition.GetSpecTypeId());
+#if REVIT2021 || REVIT2023 || REVIT2024 || REVIT2025 || REVIT2026
+                var fo = document.GetUnits().GetFormatOptions(param.Definition.GetDataType());
                 //Condition for if the user did not use the default settings
                 if (scheduleField != null)
                 {
@@ -53,8 +53,8 @@ namespace ExcelExporterImporter.Common
         {
             var document = param.Element.Document;
             double dResult = 0;
-#if REVIT2021
-                var fo = document.GetUnits().GetFormatOptions(param.Definition.GetSpecTypeId());
+#if REVIT2021 || REVIT2023 || REVIT2024 || REVIT2025 || REVIT2026
+                var fo = document.GetUnits().GetFormatOptions(param.Definition.GetDataType());
                 if (scheduleField != null)
                 {
                     var foValue = scheduleField.GetFormatOptions();

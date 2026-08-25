@@ -1,85 +1,88 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!--
+    Export-Import Excel - BIM One Revit add-in.
+    Multi-version build. Pick the Revit version with the build configuration:
+      Debug/Release R23  -> Revit 2023 (.NET Framework 4.8)
+      Debug/Release R24  -> Revit 2024 (.NET Framework 4.8)
+      Debug/Release R25  -> Revit 2025 (.NET 8)
+      Debug/Release R26  -> Revit 2026 (.NET 8)
+    Example:  dotnet build -c "Release R26"
+  -->
+
   <PropertyGroup>
-    <TargetFramework>net48</TargetFramework>
-    <DebugEngines>
-      {351668CC-8477-4fbf-BFE3-5F1006E4DB1F}
-    </DebugEngines>
-    <SccProjectName></SccProjectName>
-    <SccLocalPath></SccLocalPath>
-    <SccAuxPath></SccAuxPath>
-    <SccProvider></SccProvider>
-    <ExpressionBlendVersion>12.0.51020.0</ExpressionBlendVersion>
+    <AssemblyName>ExcelExporterImporter</AssemblyName>
+    <RootNamespace>ExcelExporterImporter</RootNamespace>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <EnableDefaultPageItems>false</EnableDefaultPageItems>
+    <LangVersion>latest</LangVersion>
+    <Platforms>x64</Platforms>
+    <PlatformTarget>x64</PlatformTarget>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <!-- Copy dependency assemblies next to the DLL so Revit can load them. -->
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <NoWarn>$(NoWarn);CA1416</NoWarn>
+    <ApplicationIcon>ImportExportExcel-Icon.ico</ApplicationIcon>
     <AssemblyTitle>ExcelExporterImporter</AssemblyTitle>
     <Product>Export-Import Excel</Product>
     <Description>Synchronize data back and forth between Revit and Excel.</Description>
     <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
-    <AssemblyVersion>21.0.0.0</AssemblyVersion>
-    <FileVersion>21.0.0.0</FileVersion>
-    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
-   
+    <Configurations>Debug R23;Debug R24;Debug R25;Debug R26;Release R23;Release R24;Release R25;Release R26</Configurations>
+    <Configuration Condition="'$(Configuration)' == ''">Release R26</Configuration>
   </PropertyGroup>
+
+  <!-- Revit version / target framework selected by the configuration name -->
+  <PropertyGroup Condition="$(Configuration.Contains('R23'))">
+    <RevitVersion>2023</RevitVersion>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('R24'))">
+    <RevitVersion>2024</RevitVersion>
+    <TargetFramework>net48</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('R25'))">
+    <RevitVersion>2025</RevitVersion>
+    <TargetFramework>net8.0-windows</TargetFramework>
+  </PropertyGroup>
+  <PropertyGroup Condition="$(Configuration.Contains('R26'))">
+    <RevitVersion>2026</RevitVersion>
+    <TargetFramework>net8.0-windows</TargetFramework>
+  </PropertyGroup>
+
   <PropertyGroup>
-    <ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
-      None
-    </ResolveAssemblyWarnOrErrorOnTargetArchitectureMismatch>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|AnyCPU'">
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>TRACE;DEBUG;REVIT2021</DefineConstants>
-    <DebugType>full</DebugType>
-  </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE;REVIT2021</DefineConstants>
-    <DebugType>pdbonly</DebugType>
-  </PropertyGroup>
-  <PropertyGroup>
-    <StartupObject />
-  </PropertyGroup>
-  <PropertyGroup>
-    <ApplicationIcon>ImportExportExcel-Icon.ico</ApplicationIcon>
+    <DefineConstants>$(DefineConstants);REVIT$(RevitVersion)</DefineConstants>
+    <Optimize Condition="$(Configuration.StartsWith('Release'))">true</Optimize>
+    <DebugType Condition="$(Configuration.StartsWith('Release'))">pdbonly</DebugType>
+    <!-- Version reflects the Revit year plus the modernized-release number (.1) -->
+    <AssemblyVersion>$(RevitVersion).1.0</AssemblyVersion>
+    <FileVersion>$(RevitVersion).1.0</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="EPPlus" Version="4.5.3.2" />
-    <PackageReference Include="EPPlusEnumerable" Version="1.1.0.0" />
-    <PackageReference Include="Revit.AdWindows.x64" Version="2021.0.0" />
-    <PackageReference Include="Revit.RevitApi.x64" Version="2021.0.0" />
-    <PackageReference Include="Revit.RevitApiUI.x64" Version="2021.0.0" />
-    <PackageReference Include="RevitApi2021" Version="21.0.0.383" />
-    <PackageReference Include="log4net" Version="2.0.3" />
-    <PackageReference Include="Ookii.Dialogs" Version="1.0" />
+    <PackageReference Include="log4net" Version="2.0.17" />
+    <PackageReference Include="Ookii.Dialogs.Wpf" Version="5.0.1" />
   </ItemGroup>
+
+  <!-- Revit API (compile-only; Revit ships these assemblies at runtime) -->
   <ItemGroup>
-    <Reference Include="Microsoft.CSharp">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="PresentationCore">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="PresentationFramework">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.configuration" />
-    <Reference Include="System.Configuration.Install">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.EnterpriseServices" />
-    <Reference Include="System.Security" />
-    <Reference Include="System.ServiceModel" />
-    <Reference Include="System.Web.Extensions" />
-    <Reference Include="System.Web.Services" />
-    <Reference Include="System.Windows.Forms">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="System.Xaml">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="WindowsBase">
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="WindowsFormsIntegration" />
+    <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2023.0.0" Condition="'$(RevitVersion)' == '2023'" ExcludeAssets="runtime" />
+    <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2024.2.0" Condition="'$(RevitVersion)' == '2024'" ExcludeAssets="runtime" />
+    <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2025.0.0" Condition="'$(RevitVersion)' == '2025'" ExcludeAssets="runtime" />
+    <PackageReference Include="Revit_All_Main_Versions_API_x64" Version="2026.0.0" Condition="'$(RevitVersion)' == '2026'" ExcludeAssets="runtime" />
   </ItemGroup>
+
+  <!-- net8 needs the settings provider as a package (built into net48) -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net8.0-windows'">
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="8.0.1" />
+  </ItemGroup>
+
+  <!-- Lets net48 build without the .NET Framework targeting pack installed -->
+  <ItemGroup Condition="'$(TargetFramework)' == 'net48'">
+    <PackageReference Include="Microsoft.NETFramework.ReferenceAssemblies" Version="1.0.3" PrivateAssets="all" />
+  </ItemGroup>
+
   <ItemGroup>
     <Compile Update="Resources.fr.Designer.cs">
       <DependentUpon>Resources.fr.resx</DependentUpon>
@@ -109,12 +112,9 @@
       <DependentUpon>ProgressWindow.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
+
   <ItemGroup>
-    <None Include="errors.log">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Include="Resources\Styles1.xaml">
-      <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </None>
     <None Include="Settings.settings">
@@ -134,17 +134,14 @@
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>
+
   <ItemGroup>
     <Resource Include="Resources\logo.ico">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\logo.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\TooIconNoNewVersionMiniGray.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
@@ -172,6 +169,30 @@
     <Resource Include="Resources\ToolIconHelpMini.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\iconapp.ico">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\IconButtonDownload.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\IconButtonExportMini.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\IconBiModeMini.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\IconUniModeMini.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\IconBiModeMiniBlue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\IconUniModeMiniBlue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
+
+  <ItemGroup>
     <Content Include="Addin.addin">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -194,36 +215,21 @@
     <Content Include="Resources\button.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <Resource Include="Resources\iconapp.ico">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\IconButtonDownload.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\IconButtonExportMini.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\IconBiModeMini.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\IconUniModeMini.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\IconBiModeMiniBlue.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
-    <Resource Include="Resources\IconUniModeMiniBlue.png">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
     <Content Include="Resources\mail.gif">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+
   <ItemGroup>
     <EmbeddedResource Update="Resources.fr.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.fr.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <!-- Embed into the fr satellite under the neutral base name so the Resources class'
+           culture fallback finds French strings at runtime (was ...Resources.fr.resources,
+           which the runtime never looked up, so French silently fell back to English). -->
+      <Culture>fr</Culture>
+      <LogicalName>ExcelExporterImporter.Resources.resources</LogicalName>
     </EmbeddedResource>
     <EmbeddedResource Update="Resources.resx">
       <Generator>PublicResXFileCodeGenerator</Generator>
@@ -234,10 +240,17 @@
       <DependentUpon>ButtonUserControl.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
-  <PropertyGroup>
-    <PostBuildEvent>
-      copy "$(MSBuildProjectDirectory)\addin.addin" "%25appdata%25\Autodesk\Revit\Addins\2021\$(MSBuildProjectName).addin"
-      xcopy "$(MSBuildProjectDirectory)\$(OutputPath)$(TargetFramework)\*" "%25appdata%25\Autodesk\Revit\Addins\2021\ExcelExporterImporter\" /S /E /R /I /F /Y
-    </PostBuildEvent>
-  </PropertyGroup>
+
+  <!-- Deploy to the local Revit add-ins folder on Debug builds only -->
+  <Target Name="DeployAddin" AfterTargets="Build" Condition="$(Configuration.StartsWith('Debug'))">
+    <PropertyGroup>
+      <RevitAddinsDir>$(AppData)\Autodesk\Revit\Addins\$(RevitVersion)</RevitAddinsDir>
+    </PropertyGroup>
+    <ItemGroup>
+      <_DeployFiles Include="$(TargetDir)**\*" />
+    </ItemGroup>
+    <Copy SourceFiles="$(ProjectDir)Addin.addin" DestinationFiles="$(RevitAddinsDir)\ExcelExporterImporter.addin" SkipUnchangedFiles="true" />
+    <Copy SourceFiles="@(_DeployFiles)" DestinationFiles="@(_DeployFiles->'$(RevitAddinsDir)\ExcelExporterImporter\%(RecursiveDir)%(Filename)%(Extension)')" SkipUnchangedFiles="true" />
+  </Target>
+
 </Project>

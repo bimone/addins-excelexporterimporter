@@ -20,6 +20,9 @@ using ExcelExporterImporter.Common;
 using log4net;
 using OfficeOpenXml;
 using Ookii.Dialogs.Wpf;
+using TaskDialog = Ookii.Dialogs.Wpf.TaskDialog;
+using TaskDialogButton = Ookii.Dialogs.Wpf.TaskDialogButton;
+using TaskDialogIcon = Ookii.Dialogs.Wpf.TaskDialogIcon;
 using MessageBox = System.Windows.MessageBox;
 
 namespace ExcelExporterImporter.ViewModels
@@ -864,21 +867,30 @@ namespace ExcelExporterImporter.ViewModels
         {
             dispatcher.Invoke(() =>
             {
-                cancellationTokenSource = new CancellationTokenSource();
-                var schedules = SchedulesList.Where(sl => sl.IsChecked).ToList();
-                var standards = StandardsList.Where(s => s.IsChecked).ToList();
+                try
+                {
+                    cancellationTokenSource = new CancellationTokenSource();
+                    var schedules = SchedulesList.Where(sl => sl.IsChecked).ToList();
+                    var standards = StandardsList.Where(s => s.IsChecked).ToList();
 
-                progress.Start((standards.Count() + schedules.Count()) * 15, "Exporting Revit Schedules");
-                if (sFileExport == "Schedules") //Call the function to export schedules
-                    ExportSchedules(schedules);
-                if (sFileExport == "Standards") //Call the function to export the standards
-                    ExportStandards(standards);
-                if (sFileExport == "Basic") ExportSchedulesBasic(schedules);
-                progress.End();
+                    progress.Start((standards.Count() + schedules.Count()) * 15, "Exporting Revit Schedules");
+                    if (sFileExport == "Schedules") //Call the function to export schedules
+                        ExportSchedules(schedules);
+                    if (sFileExport == "Standards") //Call the function to export the standards
+                        ExportStandards(standards);
+                    if (sFileExport == "Basic") ExportSchedulesBasic(schedules);
+                    progress.End(); // close the progress window before showing any dialog
 
-                if (!cancellationTokenSource.IsCancellationRequested)
-                    MessageBox.Show(window, Resources.ExportProcessCompleteMessage, Resources.ProcessCompleteTitle,
-                        MessageBoxButton.OK, MessageBoxImage.Information);
+                    if (!cancellationTokenSource.IsCancellationRequested)
+                        MessageBox.Show(window, Resources.ExportProcessCompleteMessage, Resources.ProcessCompleteTitle,
+                            MessageBoxButton.OK, MessageBoxImage.Information);
+                }
+                catch (Exception ex)
+                {
+                    progress.End();
+                    Logger.Error(ex.ToString());
+                    MessageBox.Show(window, ex.Message, "Export error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
             });
             // ***********************
         }

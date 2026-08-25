@@ -102,9 +102,9 @@ namespace ExcelExporterImporter.Common
 
             var bAnalyticalNodesShedule = false;
             var bRvtLinksShedule = false;
-            if (BuiltInCategory.OST_AnalyticalNodes == (BuiltInCategory) schedule.Definition.CategoryId.IntegerValue)
+            if (BuiltInCategory.OST_AnalyticalNodes == (BuiltInCategory) schedule.Definition.CategoryId.IntId())
                 bAnalyticalNodesShedule = true;
-            else if (BuiltInCategory.OST_RvtLinks == (BuiltInCategory) schedule.Definition.CategoryId.IntegerValue)
+            else if (BuiltInCategory.OST_RvtLinks == (BuiltInCategory) schedule.Definition.CategoryId.IntId())
                 bRvtLinksShedule = true;
             //Excluded revit links
             if (revitLinksElements.Any() && bRvtLinksShedule == false)
@@ -175,8 +175,8 @@ namespace ExcelExporterImporter.Common
                     //We call the method that will get the parameters associated with the cell
                     var parameter = RevitUtilities.GetParameter(doc, element, scheduleField, pElement);
                     if (parameter != null)
-                        if (!LstParameter.ContainsKey(scheduleField.ParameterId.IntegerValue))
-                            LstParameter.Add(scheduleField.ParameterId.IntegerValue, parameter);
+                        if (!LstParameter.ContainsKey(scheduleField.ParameterId.IntId()))
+                            LstParameter.Add(scheduleField.ParameterId.IntId(), parameter);
                     //We call the method that will get the rights associated with the cell
                     var readonlyParameter = RevitUtilities.GetIsReadOnly(parameter, scheduleField, readonlyParameters);
                     //We call the method that will get the value associated with the cell
@@ -276,7 +276,7 @@ namespace ExcelExporterImporter.Common
                 //Get the field format
                 var format = "";
                 var formatOptions = scheduleField.GetFormatOptions();
-#if REVIT2021
+#if REVIT2021 || REVIT2023 || REVIT2024 || REVIT2025 || REVIT2026
                     if (!formatOptions.UseDefault && !formatOptions.GetSymbolTypeId().Empty())
                     {
                         var formatValueOptions = new FormatValueOptions();
@@ -453,13 +453,18 @@ namespace ExcelExporterImporter.Common
             {
                 worksheet.Cells[iHeaderRow + 1, iCol].Value = FieldItem.ColumnHeading;
                 var sParamType = string.Empty;
-                if (LstParameter.ContainsKey(FieldItem.ParameterId.IntegerValue))
+                if (LstParameter.ContainsKey(FieldItem.ParameterId.IntId()))
                 {
-                    var vParam = LstParameter[FieldItem.ParameterId.IntegerValue];
-                    sParamType = LstParameter[FieldItem.ParameterId.IntegerValue].Definition.ParameterType.ToString();
-                    if (sParamType == "Invalid")
+                    var vParam = LstParameter[FieldItem.ParameterId.IntId()];
+                    // ParameterType was removed in Revit 2023; use the data type instead.
+                    var dataType = vParam.Definition.GetDataType();
+                    if (dataType == SpecTypeId.Boolean.YesNo)
+                        sParamType = "TrueFalse";
+                    else if (dataType == null || dataType.Empty())
                         sParamType = vParam.StorageType.ToString();
-                    else if (sParamType == "YesNo") sParamType = "TrueFalse";
+                    else
+                        try { sParamType = LabelUtils.GetLabelForSpec(dataType); }
+                        catch { sParamType = vParam.StorageType.ToString(); }
                 }
 
                 worksheet.Cells[iHeaderRow + 2, iCol].Value = sParamType;
